@@ -104,6 +104,7 @@ input[type=text] {
     border-radius: .5em;
     font-size: 1.3rem;
     cursor: pointer;
+    -webkit-appearance: none;
 }
 
 #cta-btn:hover {
