@@ -94,7 +94,7 @@ input[type=text] {
     margin-top: .3em;
 }
 
-input[type=button] {
+#cta-btn {
     background-color: #F89104;
     border: none;
     width: 100%;
@@ -106,8 +106,12 @@ input[type=button] {
     cursor: pointer;
 }
 
-input[type=button]:hover {
+#cta-btn:hover {
     background-color: rgb(216, 126, 1);
+}
+
+#cta-btn:focus {
+    outline: 0;
 }
 
 .authentic {
@@ -143,53 +147,65 @@ p {
     line-height: var(--leading);
 }
 
-@media (min-width: 730px) {
+.overlay {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, .9);
+    z-index: 1;
+    place-content: center;
+    color: white;
+    display: none;
+    opacity: 0;
+}
 
+@media (min-width: 730px) {
+    
     section {
         margin: 0 4em;
     }
-
+    
     .form-container {
         margin: 2em -4em 0;
     }
-
+    
 }
 
 @media (min-width: 930px) {
-
+    
     .hero-bg {
         text-align: left;
     }
-
+    
     .hero-bg p {
         margin: 0 0 3em;
     }
-
+    
     .hero-bg section {
         width: 65%;
     }
-
+    
     .form-container {
         margin: 2em 0 0;
         padding: 2em;
         border-radius: .5em;
         box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
     }
-
+    
     form {
         display: flex;
-
+        
     }
-
+    
     .form-left {
         width: 70%;
     }
-
+    
     label {
         margin: 0;
     }
-
-    input[type=button] {
+    
+    #cta-btn {
         height: fit-content;
         font-size: 1.1em;
         margin-left: 1em;
@@ -197,11 +213,11 @@ p {
         padding: .7em 0;
         width: 30%;
     }
-
+    
     .hero-bg p {
         margin-bottom: 0;
     }
-
+    
     section.authentic {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -214,15 +230,15 @@ p {
         text-align: left;
         align-self: center;
     }
-
+    
     .img {
         grid-area: bowl;
     }
-
+    
     h2 {
         margin: 0;
     }
-
+    
 }
 
 .top {
@@ -237,5 +253,24 @@ p {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+.animate-overlay {
+    animation: overlay 3s forwards;
+}
+
+@keyframes overlay {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
