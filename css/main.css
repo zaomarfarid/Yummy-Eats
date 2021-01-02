@@ -14,6 +14,7 @@ body {
 .hero-bg {
     background: #307D99 url('../images/bg.jpg');
     background-position: 12% 83%;
+    background-size: cover;
     color: white;
     text-align: center;
     padding-bottom: 4em;
@@ -149,7 +150,8 @@ p {
 }
 
 .overlay {
-    position: absolute;
+    position: fixed;
+    /* position: absolute; */
     height: 100vh;
     width: 100%;
     background: rgba(0, 0, 0, .9);
