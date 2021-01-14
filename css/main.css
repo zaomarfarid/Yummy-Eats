@@ -4,19 +4,21 @@
 
 :root {
     --leading: 2em;
+    --mainColor: #ffd166;
 }
 
 body {
     -webkit-text-size-adjust: none;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
+    height: 100%;
 }
 
 .hero-bg {
-    background: #307D99 url('../images/bg.jpg');
-    background-position: 12% 83%;
+    background: var(--mainColor) url('../images/milkshake2.jpg');
+    background-position: 82% 0%;
     background-size: cover;
-    color: white;
+    color: #551400;
     text-align: center;
     padding-bottom: 4em;
 }
@@ -47,17 +49,13 @@ h1 span {
     font-size: 1.4rem;
     position: relative;
     z-index: 1;
+    background: #d6c5b3;
+    width: fit-content;
+    margin: auto;
 }
 
-h1 span::before {
-    content: '';
-    position: absolute;
-    width: 3em;
-    background: #00BFFF;
-    height: .4em;
-    bottom: 0;
-    z-index: -1;
-    margin-left: -.3em;
+p span {
+    display: block;
 }
 
 .hero-bg p {
@@ -72,7 +70,7 @@ h1 span::before {
 }
 
 label {
-    color: #2D7D98;
+    color: var(--mainColor);
     font-weight: bold;
     display: block;
     margin-bottom: 1em;
@@ -80,7 +78,7 @@ label {
 }
 
 input[type=text] {
-    border: 1px solid #707070;
+    border: 1px solid var(--mainColor);
     width: 100%;
     padding: 1em;
     box-sizing: border-box;
@@ -97,7 +95,7 @@ input[type=text] {
 }
 
 #cta-btn {
-    background-color: #F89104;
+    background-color: var(--mainColor);
     border: none;
     width: 100%;
     color: white;
@@ -110,7 +108,8 @@ input[type=text] {
 }
 
 #cta-btn:hover {
-    background-color: rgb(216, 126, 1);
+    background-color: #e9c46a;
+;
 }
 
 #cta-btn:focus {
@@ -126,6 +125,11 @@ input[type=text] {
     margin: 3em 1em;
 }
 
+.left-col {
+    text-align: center;
+    margin: 3em 1em;
+}
+
 h2 {
     text-transform: uppercase;
     position: relative;
@@ -134,8 +138,8 @@ h2 {
 h2::before {
     content: '';
     position: absolute;
-    width: 8em;
-    background: #00BFFF;
+    width: 13em;
+    background: var(--mainColor);
     height: .4em;
     bottom: 0;
     z-index: -1;
@@ -144,6 +148,11 @@ h2::before {
 
 img {
     width: 100%;
+}
+
+.img2 {
+    object-fit: cover;
+    height: 35em;
 }
 
 p {
@@ -195,6 +204,10 @@ p {
         box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
     }
     
+    h1 span {
+        margin: 0;
+    }
+
     form {
         display: flex;
         
@@ -224,18 +237,29 @@ p {
     section.authentic {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: 'bowl content';
+        grid-template-areas: 'bowl content1' 'content2 milkshake';
     }
     
     .right-col {
-        grid-area: content;
+        grid-area: content1;
+        padding: 0 10%;
+        text-align: left;
+        align-self: center;
+    }
+
+    .left-col {
+        grid-area: content2;
         padding: 0 10%;
         text-align: left;
         align-self: center;
     }
     
-    .img {
+    .img1 {
         grid-area: bowl;
+    }
+
+    .img2 {
+        grid-area: milkshake;
     }
     
     h2 {
