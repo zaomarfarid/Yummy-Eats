@@ -1,11 +1,19 @@
 {% extends "layout.html" %}
 {% block title %}Results{% endblock %}
 {% block body %}
-<h1>Results</h1>
-<ul>
-    <!-- to desplay results soon -->
-    {% for f in food %}
-    <li>{{ f }}</li>
-    {% endfor %}
-</ul>
+
+<section class="top">
+    <header>
+        <a href="/">yummy.eats</a>
+    </header>
+    <h1>{{ city }}</h1>
+    <ul>
+        <!-- display results -->
+        {% for f in food %}
+        <li>{{ f.food }}</li>
+        {% endfor %}
+    </ul>
+</section>
+
+
 {% endblock %}
