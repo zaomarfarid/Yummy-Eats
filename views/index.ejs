@@ -1,4 +1,4 @@
-<% layout('/layouts/boilerplate') %> 
+<% layout('/layouts/boilerplate') %>
 <div class="overlay" id="overlay">
     <h3>Searching now...</h3>
 </div>
@@ -12,13 +12,13 @@
             banana, so never interrupt me when having a banana. If you are feeling to have something, peeling a
             banana is better!<span>Enjoy your time little monkeys &#9825;</span></p>
         <div class="form-container">
-            <form action="">
+            <form action="/search" method="POST">
                 <div class="form-left">
                     <label for="city">Enter your city:</label>
                     <input type="text" name="city" id="city">
                     <p>Example: "San Diego"</p>
                 </div>
-                <input type="button" value="Find Food Now" id="cta-btn">
+                <input type="submit" value="Find Food Now" id="cta-btn">
             </form>
         </div>
     </section>

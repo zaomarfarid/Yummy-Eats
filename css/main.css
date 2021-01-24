@@ -109,7 +109,6 @@ input[type=text] {
 
 #cta-btn:hover {
     background-color: #e9c46a;
-;
 }
 
 #cta-btn:focus {
@@ -172,55 +171,55 @@ p {
 }
 
 @media (min-width: 730px) {
-    
+
     section {
         margin: 0 4em;
     }
-    
+
     .form-container {
         margin: 2em -4em 0;
     }
-    
+
 }
 
 @media (min-width: 930px) {
-    
+
     .hero-bg {
         text-align: left;
     }
-    
+
     .hero-bg p {
         margin: 0 0 3em;
     }
-    
+
     .hero-bg section {
         width: 65%;
     }
-    
+
     .form-container {
         margin: 2em 0 0;
         padding: 2em;
         border-radius: .5em;
         box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
     }
-    
+
     h1 span {
         margin: 0;
     }
 
     form {
         display: flex;
-        
+
     }
-    
+
     .form-left {
         width: 70%;
     }
-    
+
     label {
         margin: 0;
     }
-    
+
     #cta-btn {
         height: fit-content;
         font-size: 1.1em;
@@ -229,17 +228,17 @@ p {
         padding: .7em 0;
         width: 30%;
     }
-    
+
     .hero-bg p {
         margin-bottom: 0;
     }
-    
+
     section.authentic {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: 'bowl content1' 'content2 milkshake';
+        grid-template-areas: 'bowl content1''content2 milkshake';
     }
-    
+
     .right-col {
         grid-area: content1;
         padding: 0 10%;
@@ -253,7 +252,7 @@ p {
         text-align: left;
         align-self: center;
     }
-    
+
     .img1 {
         grid-area: bowl;
     }
@@ -261,11 +260,11 @@ p {
     .img2 {
         grid-area: milkshake;
     }
-    
+
     h2 {
         margin: 0;
     }
-    
+
 }
 
 .top {
@@ -277,6 +276,7 @@ p {
         opacity: 0;
         transform: translateY(-2em);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -291,12 +291,15 @@ p {
     0% {
         opacity: 0;
     }
+
     30% {
         opacity: 1;
     }
+
     70% {
         opacity: 1;
     }
+
     100% {
         opacity: 0;
     }

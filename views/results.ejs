@@ -1,2 +1,7 @@
 <% layout('/layouts/boilerplate') %>
 <h1>Results</h1>
+<ul>
+    <% city.food.forEach(element => { %>
+    <li><%= element.name %> - Price: <%= element.price %> </li>
+    <% }) %>
+</ul>
