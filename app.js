@@ -1,10 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const { Schema } = mongoose;
 const ejsMate = require('ejs-mate');
-const methodOverride = require('method-override');
-// const { City } = require('./models/city');
+const City = require('./models/city')
 const port = 3000;
+
+const app = express();
 
 // connect to mongoDB using mongooose
 mongoose.connect('mongodb://localhost:27017/eats', {
@@ -18,51 +18,25 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => { console.log('Database connected') });
 
-// food Schema
-const citySchema = new Schema({
-    name: String, // String is shorthand for {type: String}
-    food: [{ name: String, price: Number }],
-    body: String,
-    comments: [{ body: String, date: Date }],
-    date: { type: Date, default: Date.now },
-    hidden: Boolean,
-    meta: {
-        votes: Number,
-        favs: Number
-    }
-});
-
-const City = mongoose.model('City', citySchema);
-
-// City.insertMany([
-//     { name: 'Wuhan', food: [{ name: 'noddles', price: 15 }, { name: 'macaroni', price: 10 }] },
-//     { name: 'San Diego', food: [{ name: 'something', price: 25 }, { name: 'rice', price: 20 }] }
-// ]);
-
-// const wuhan = new City();
-// wuhan.save();
-
-const app = express();
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 
+// serve static assets
 app.use(express.static(__dirname));
 
 // to parse req.body
 app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride('_method'));
 
 app.get('/', (req, res) => {
     res.render('index')
 })
 
-app.get('/search', (req, res) => {
-    res.render('results')
-})
-
 app.post('/search', async (req, res) => {
     const name = req.body.city;
     const city = await City.findOne({ name });
+    if (!city) {
+        return res.redirect('/');
+    }
     res.redirect(`/search/${city.id}`);
 })
 
